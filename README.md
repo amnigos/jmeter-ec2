@@ -46,7 +46,7 @@ IMPORTANT - There is a limit imposed by Amazon on how many instances can be run 
 ## Execution Instructions (for UNIX based OSs)
 1. Create a project directory on your machine. For example: `/home/username/jmeter-ec2/`. This is the working dir for the script.
 
-2. Download all files from [https://github.com/oliverlloyd/jmeter-ec2](https://github.com/oliverlloyd/jmeter-ec2) and place them in the root directory created above and then extract the file example-project.zip to give a template directory structure for your project.
+2. Download all files from [https://github.com/amnigos/jmeter-ec2](https://github.com/amnigos/jmeter-ec2) and place them in the root directory created above and then extract the file example-project.zip to give a template directory structure for your project.
 
 3. Edit the file jmeter-ec2.properties, each value listed below must be set:
 
@@ -125,4 +125,4 @@ along with JMeter-ec2.  If not, see <http://www.gnu.org/licenses/>.
 
 
 The source repository is at:
-  [https://github.com/oliverlloyd/jmeter-ec2](https://github.com/oliverlloyd/jmeter-ec2)
+  [https://github.com/amnigos/jmeter-ec2](https://github.com/amnigos/jmeter-ec2)
