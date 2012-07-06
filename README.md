@@ -31,7 +31,7 @@ IMPORTANT - There is a limit imposed by Amazon on how many instances can be run 
 
 
 ### Notes and useful links for installing the EC2 API Tools
-* Download tools from [here](http://aws.amazon.com/developertools/351/).
+* Download EC2 API tools from [here](http://s3.amazonaws.com/ec2-downloads/ec2-api-tools.zip).
 * Good write-up [here](http://www.robertsosinski.com/2008/01/26/starting-amazon-ec2-with-mac-os-x/).
 
 #### Example environment Vars | `vi ~/.bash_profile`
