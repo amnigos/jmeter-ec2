@@ -252,9 +252,6 @@ function runsetup() {
     fi
 	
     # scp install.sh
-
-    echo "If you see lost connection message then check ssh port access, key file and ssh username in jmeter-ec2.properties "
-    echo 
     echo -n "copying install.sh to $INSTANCE_COUNT server(s)..."
     for host in ${hosts[@]} ; do
         (scp -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
@@ -876,22 +873,34 @@ function updateTest() {
 }
 
 function control_c(){
-	# Turn off the CTRL-C trap now that it has been invoked once already
-	trap - INT
 	
-    # Stop the running test on each host
+    echo 
+    echo "Do you really want to terminate JMeter testing (Y/N)?"
     echo
-    echo "> Stopping test..."
-    for f in ${!hosts[@]} ; do
-        ( ssh -nq -o StrictHostKeyChecking=no \
-        -i $PEM_PATH/$PEM_FILE.pem $USER@${hosts[$f]} \
-        $REMOTE_HOME/$JMETER_VERSION/bin/stoptest.sh ) &
-    done
-    wait
-    echo ">"
-    
-    runcleanup
-    exit
+
+    read answer
+
+    if [ "$(echo $answer | tr [:upper:] [:lower:])" == "y" ]
+
+    then
+
+        # Stop the running test on each host
+        echo
+        echo "> Stopping test..."
+        for f in ${!hosts[@]} ; do
+            ( ssh -nq -o StrictHostKeyChecking=no \
+            -i $PEM_PATH/$PEM_FILE.pem $USER@${hosts[$f]} \
+            $REMOTE_HOME/$JMETER_VERSION/bin/stoptest.sh ) &
+        done
+        wait
+        echo ">"       
+        runcleanup
+        exit
+
+    else echo "You have selected NO so it will continue...."
+
+    fi
+
 }
 
 # trap keyboard interrupt (control-c)
