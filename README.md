@@ -1,4 +1,10 @@
-# JMeter ec2 Script
+# Quick setup instructions :
+
+ [http://www.http503.com/2012/jmeter-ec2/](http://www.http503.com/2012/jmeter-ec2/)
+
+
+
+# JMeter ec2 Script details
 -----------------------------
 
 This shell script will allow you to run your local JMeter jmx files either using Amazon's EC2 service or you can provide it with a simple, comma-delimeted list of hosts to use. It does not use Distributed mode to run the test so it is effectively infinitely scalable (Distributed mode means all results are written to a central location which at high volumes can create a bottleneck).
