@@ -252,6 +252,9 @@ function runsetup() {
     fi
 	
     # scp install.sh
+
+    echo "If you see lost connection message then check ssh port access, key file and ssh username in jmeter-ec2.properties "
+
     echo -n "copying install.sh to $INSTANCE_COUNT server(s)..."
     for host in ${hosts[@]} ; do
         (scp -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
