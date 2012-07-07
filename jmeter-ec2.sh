@@ -875,7 +875,9 @@ function updateTest() {
 function control_c(){
 	
     echo 
+
     echo "Do you really want to terminate JMeter testing (Y/N)?"
+
     echo
 
     read answer
