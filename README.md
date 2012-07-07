@@ -3,7 +3,7 @@
  [http://www.http503.com/2012/jmeter-ec2/](http://www.http503.com/2012/jmeter-ec2/)
 
 
-#Common Errors
+### Common Errors
 
  * SSH lost connecion - Make sure ssh port access is given to the secuirity group specified in jmeter-ec2.properties file. Also username specified in the properties file exists in the AMI used.
 
