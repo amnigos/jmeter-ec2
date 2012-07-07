@@ -5,7 +5,7 @@
 
 ### Common Errors
 
- * SSH lost connecion - Make sure ssh port access is given to the secuirity group specified in jmeter-ec2.properties file. Also username specified in the properties file exists in the AMI used.
+ * SSH lost connecion - Make sure ssh port access is given to the ec2 security group specified in jmeter-ec2.properties file. Also username specified in the properties file exists in the AMI used.
 
 
 
