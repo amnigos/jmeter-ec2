@@ -67,19 +67,19 @@ IMPORTANT - There is a limit imposed by Amazon on how many instances can be run 
 	`AMI_ID="[A linix based AMI, eg. ami-e1e8d395]"`
 	(only in ec2 mode) Recommended AMIs provided. Both Java and JMeter are installed by the script and are not required.
 
-	`INSTANCE_TYPE="t1.micro"`
+	`INSTANCE_TYPE="m1.medium"`
 	(only in ec2 mode) This depends on the type of AMI - it must be available for the AMI used.
 
 	`INSTANCE_SECURITYGROUP="jmeter"`
 	(only in ec2 mode) The name of your security group created under your Amazon account. It must allow Port 22 to the local machine running this script.
 
-	`PEM_FILE="olloyd-eu"`
+	`PEM_FILE="amnigos"`
 	(only in ec2 mode) Your Amazon key file - obviously must be installed locally.
 
-	`PEM_PATH="/Users/oliver/.ec2"`
+	`PEM_PATH="/Users/vijayr/.ec2"`
 	(only in ec2 mode) The DIRECTORY where the Amazon PEM file is located. No trailing '/'!
 
-	`INSTANCE_AVAILABILITYZONE="eu-west-1b"`
+	`INSTANCE_AVAILABILITYZONE="us-east-1c"`
 	(only in ec2 mode) Should be a valid value for where you want the instances to launch.
 
 	`USER="ubuntu"`
