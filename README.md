@@ -45,10 +45,10 @@ IMPORTANT - There is a limit imposed by Amazon on how many instances can be run 
 #### Example environment Vars | `vi ~/.bash_profile`
     export EC2_HOME=~/.ec2
     export PATH=$PATH:$EC2_HOME/bin
-    export EC2_PRIVATE_KEY=`ls $EC2_HOME/jmeter_key.pem`
-    export EC2_CERT=`ls $EC2_HOME/jmeter_cert.pem`
+    export EC2_PRIVATE_KEY=`ls $EC2_HOME/pk-33HW7IN4WMOOG84545888r8t.pem`
+    export EC2_CERT=`ls $EC2_HOME/cert-33HW7IN4WMOOG84545888r8t.pem`
     export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
-    export EC2_URL=https://ec2.eu-west-1.amazonaws.com
+    export EC2_URL=https://ec2.us-east-1.amazonaws.com
 
 
 ## Execution Instructions (for UNIX based OSs)
