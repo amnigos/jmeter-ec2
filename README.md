@@ -3,7 +3,7 @@
  [http://www.http503.com/2012/jmeter-ec2/](http://www.http503.com/2012/jmeter-ec2/)
 
 
-### Common Errors
+# Common Errors
 
  * **Problem:SSH lost connecion**
  
@@ -13,6 +13,9 @@
  
  If you see this error while running the script then refer to [this EC2 forums thread](https://forums.aws.amazon.com/thread.jspa?messageID=364718)
 
+ * **Client.MalformedSOAPSignature: Invalid SOAP Signature. Failed to check signature with X.509 cert**
+
+ If you see this error then it's possble that you have a wrong private key for your x.509 certificate in your ec2-api-tools setup. Please visit this [EC2 forum thread] for more details(https://forums.aws.amazon.com/message.jspa?messageID=115688)
 
 
 # JMeter ec2 Script details
