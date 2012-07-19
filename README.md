@@ -7,6 +7,8 @@
 
  * SSH lost connecion - Make sure ssh port access is given to the ec2 security group specified in jmeter-ec2.properties file. Also username specified in the properties file exists in the AMI used.
 
+ * requesting 1 instance(s)...Client.Unsupported: The requested configuration is currently not supported. Please check the documentation for supported configurations - If you see this error while running the script then refer to [this EC2 forums thread](https://forums.aws.amazon.com/thread.jspa?messageID=364718)
+
 
 
 # JMeter ec2 Script details
@@ -114,7 +116,7 @@ IMPORTANT - There is a limit imposed by Amazon on how many instances can be run 
 	ELASTIC_IPS=""                              # A list of static IPs that can be assigned to each ec2 host. Ignored if not set.
 	JMETER_VERSION="apache-jmeter-2.6"          # The version of JMeter to be used. Must be the full name used in the dir structure. Does not work for versions prior to 2.5.1.
 
-	
+
 4. Copy your JMeter jmx file into the /jmx directory under your root project directory (LOCAL_HOME) and rename it to the same name as the directory. For example, if you created the directory `/testing/myproject` then you should name the jmx file `myproject.jmx` if you are using `LOCAL_HOME=/home/username/someproject` then the jmx file should be renamed to `someproject.jmx`
 
 5. Copy any data files that are required by your testplan to the /data sub directory.
