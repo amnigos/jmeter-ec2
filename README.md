@@ -5,11 +5,11 @@
 
 ### Common Errors
 
- * **Problem:SSH lost connecion
+ * **Problem:SSH lost connecion**
  
  Make sure ssh port access is given to the ec2 security group specified in jmeter-ec2.properties file. Also username specified in the properties file exists in the AMI used.
 
- * **requesting 1 instance(s)...Client.Unsupported: The requested configuration is currently not supported. Please check the documentation for supported configurations
+ * **requesting 1 instance(s)...Client.Unsupported: The requested configuration is currently not supported. Please check the documentation for supported configurations**
  
  If you see this error while running the script then refer to [this EC2 forums thread](https://forums.aws.amazon.com/thread.jspa?messageID=364718)
 
@@ -155,4 +155,4 @@ along with JMeter-ec2.  If not, see <http://www.gnu.org/licenses/>.
 
 
 The source repository is at:
-  [https://github.com/amnigos/jmeter-ec2](https://github.com/amnigos/jmeter-ec2)
+  [https://github.com/amnigos/jmeter-ec2](https://github.com/amnigos/jmeter-ec2) and is forked from [https://github.com/oliverlloyd/jmeter-ec2](https://github.com/oliverlloyd/jmeter-ec2)
