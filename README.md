@@ -64,13 +64,13 @@ IMPORTANT - There is a limit imposed by Amazon on how many instances can be run 
     `REMOTE_HOME="/tmp"` # This value can be left as the default unless you have a specific requirement to change it
     This is the location where the script will execute the test from - it is not important as it will only exist for the duration of the test.
 
-	`AMI_ID="[A linix based AMI, eg. ami-e1e8d395]"`
+	`AMI_ID="[A linix based AMI, eg. ami-fe20d597]"`
 	(only in ec2 mode) Recommended AMIs provided. Both Java and JMeter are installed by the script and are not required.
 
 	`INSTANCE_TYPE="m1.medium"`
 	(only in ec2 mode) This depends on the type of AMI - it must be available for the AMI used.
 
-	`INSTANCE_SECURITYGROUP="jmeter"`
+	`INSTANCE_SECURITYGROUP="default"`
 	(only in ec2 mode) The name of your security group created under your Amazon account. It must allow Port 22 to the local machine running this script.
 
 	`PEM_FILE="amnigos"`
@@ -99,6 +99,22 @@ IMPORTANT - There is a limit imposed by Amazon on how many instances can be run 
 
 	DATABASE SETTINGS - optional, this functionality is not currently documented.
 
+### Example jmeter-ec2.properties 
+
+	LOCAL_HOME="/Users/vijayr/Work/jmeter-ec2"       # The root for this script - all files should be put here as per the README
+	REMOTE_HOME="/tmp"                          # This can be left as /tmp - it is a temporary working location
+	AMI_ID="ami-fe20d597"                       # A suitable AMI - 2 suggested AMIs are listed above. (Tested OK with SUSE Linux 32 & 64 bit.)
+	INSTANCE_TYPE="m1.medium"                    # Should match the AMI - I do not recommend usng micros for live tests but it's useful for dev work
+	INSTANCE_SECURITYGROUP="default"             # The name of *your* security group in *your* Amazon account - clearly this needs to give your local machine ssh access
+	PEM_FILE="amnigos"                        # The name of the pem file you downloaded from your Amazon account
+	PEM_PATH="/Users/vijayr/.ec2"               # The path to your pem file
+	INSTANCE_AVAILABILITYZONE="us-east-1c"      # Should match the AMI
+	USER="bitnami"                               # Should match the AMI, I am using bitnami AMI so username is binami
+	RUNNINGTOTAL_INTERVAL="3"                   # How often the script prints running totals to the screen (n * summariser.interval seconds)
+	ELASTIC_IPS=""                              # A list of static IPs that can be assigned to each ec2 host. Ignored if not set.
+	JMETER_VERSION="apache-jmeter-2.6"          # The version of JMeter to be used. Must be the full name used in the dir structure. Does not work for versions prior to 2.5.1.
+
+	
 4. Copy your JMeter jmx file into the /jmx directory under your root project directory (LOCAL_HOME) and rename it to the same name as the directory. For example, if you created the directory `/testing/myproject` then you should name the jmx file `myproject.jmx` if you are using `LOCAL_HOME=/home/username/someproject` then the jmx file should be renamed to `someproject.jmx`
 
 5. Copy any data files that are required by your testplan to the /data sub directory.
